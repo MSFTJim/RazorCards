@@ -14,8 +14,9 @@
     @foreach (var cocktail in Model.Cocktails)
     {
         <div class="card">
-            @* <div class="card-img" src="@cocktail.ImagePath"> </div> *@
+            @* <div class="card-img" src="@cocktail.ImagePath"> </div> *@            
             <div class="card-img" style="background-image: url('@cocktail.ImagePath');">                 
+            @* <div src="@cocktail.ImagePath" class="card-img-top"> *@
             </div>
             <div class="card-body">
                 <h5 class="card-title"> @cocktail.Name</h5>
