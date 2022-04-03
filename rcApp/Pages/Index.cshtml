@@ -10,17 +10,37 @@
 </div>
 
 
-<div class="card-columns">
+<div class="row">
+    @for (int i = 0; i < Model.Cocktails.Count; i++)
+    {
+        if (i > 0 && i % 3 == 0)
+        {
+            @* close and start new row *@
+            @:</div><div class="row"> 
+        }
+        <div class="col">            
+            <div class="card" >            
+                @* <div class="card-img" style="background-image: url('@Model.Cocktails[i].ImagePath');"> </div>*@               
+                <img src="@Model.Cocktails[i].ImagePath" class="img-fluid" width ="294" height="294" alt="Cocktail Image">                          
+                
+                <div class="card-body">
+                    <h5 class="card-title"> @Model.Cocktails[i].Name</h5>
+                </div>
+            </div>             
+        </div>
+    }
+</div>
+
+
+@* <div class="card-columns">
     @foreach (var cocktail in Model.Cocktails)
     {
         <div class="card">
-            @* <div class="card-img" src="@cocktail.ImagePath"> </div> *@            
             <div class="card-img" style="background-image: url('@cocktail.ImagePath');">                 
-            @* <div src="@cocktail.ImagePath" class="card-img-top"> *@
             </div>
             <div class="card-body">
                 <h5 class="card-title"> @cocktail.Name</h5>
             </div>
         </div>
     }
-</div>
+</div> *@
