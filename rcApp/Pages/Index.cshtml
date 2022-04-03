@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cocktail Postings</h1>
+    <p><a href="https://recoverycentersofamerica.com/"> Concerned about a drinking problem</a>?</p>
+</div>
+
+
+<div class="card-columns">
+    @foreach (var cocktail in Model.Cocktails)
+    {
+        <div class="card">
+            @* <div class="card-img" src="@cocktail.ImagePath"> </div> *@
+            <div class="card-img" style="background-image: url('@cocktail.ImagePath');">                 
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"> @cocktail.Name</h5>
+            </div>
+        </div>
+    }
+</div>
