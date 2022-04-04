@@ -48,12 +48,12 @@ public class IndexModel : PageModel
     {
         int dog = 0;
         
-        Cocktails.Add(new Cocktail() { Id = 1001, Name = "Grasshopper", Price = 15.25M, ImagePath = "images/grasshopper.jfif" });        
-        Cocktails.Add(new Cocktail() { Id = 1002, Name = "Manhattan", Price = 15.25M, ImagePath = "images/manhattan.jfif" });
-        Cocktails.Add(new Cocktail() { Id = 1003, Name = "Martini", Price = 15.25M, ImagePath = "images/martini.jpg" });            
-        Cocktails.Add(new Cocktail() { Id = 1004, Name = "Beer", Price = 15.25M, ImagePath = "images/NoImage.jpg" });
-        Cocktails.Add(new Cocktail() { Id = 1005, Name = "Hand Craft", Price = 15.25M, ImagePath = "https://user-images.githubusercontent.com/41929050/61567052-13938600-aa33-11e9-9a88-cd842073ba44.jpg" });
-        Cocktails.Add(new Cocktail() { Id = 1006, Name = "Pink shirt", Price = 15.25M, ImagePath = "https://user-images.githubusercontent.com/41929050/61567062-14c4b300-aa33-11e9-9dcd-8bfed4ece810.png" });
+        Cocktails.Add(new Cocktail() { Id = 1001, Name = "Grasshopper", Price = 15.25M, ImagePath = "images/ae.jpg" });        
+        Cocktails.Add(new Cocktail() { Id = 1002, Name = "Manhattan", Price = 15.25M, ImagePath = "images/pvw.jpg" });
+        Cocktails.Add(new Cocktail() { Id = 1003, Name = "Martini", Price = 15.25M, ImagePath = "images/gasFlags.jpg" });            
+        Cocktails.Add(new Cocktail() { Id = 1004, Name = "Beer", Price = 15.25M, ImagePath = "images/reme.jpg" });
+        Cocktails.Add(new Cocktail() { Id = 1005, Name = "Hand Craft", Price = 15.25M, ImagePath = "images/coffee.jpg" });
+        Cocktails.Add(new Cocktail() { Id = 1006, Name = "Pink shirt", Price = 15.25M, ImagePath = "images/tanq.jpg" });
         
         // 
 
