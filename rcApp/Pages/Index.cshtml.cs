@@ -14,8 +14,9 @@ public class IndexModel : PageModel
         public decimal Price { get; set; }
         public string? ImagePath { get; set; }
 
-
     };
+
+    // hello world
 
     
     public List<Cocktail> Cocktails = new();
