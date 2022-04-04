@@ -21,8 +21,10 @@
         <div class="col">            
             <div class="card" >            
                 @* <div class="card-img" style="background-image: url('@Model.Cocktails[i].ImagePath');"> </div>*@               
-                <picture width ="150px" height="150px" >
-                <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                          
+                @* <picture width ="50%" height="50%" > *@
+                <picture >
+                    @* <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                           *@
+                    <img src="@Model.Cocktails[i].ImagePath" class="card-img" height="100vw" alt="Cocktail Image">                          
                 </picture>
                 @* width ="294" height="294" *@
                 <div class="card-body">
