@@ -9,9 +9,9 @@
     <p><a href="https://recoverycentersofamerica.com/"> Concerned about a drinking problem</a>?</p>
 </div>
 
-@{ var ColumnCount = 3;
+@{ var ColumnCount = 5;
 
-
+<!-- TODO needed--  to have column count same on eery row -->
 <div class="row">
     @for (int i = 0; i < Model.Cocktails.Count; i++)
     {
@@ -26,7 +26,16 @@
                 @* <picture width ="50%" height="50%" > *@
                 @* <picture > *@
                     @* <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                           *@
-                    <img src="@Model.Cocktails[i].ImagePath" class="card-img" style="height:75%;  width:75%; object-fit:contain;" alt="Cocktail Image">
+                    <!-- <img src="@Model.Cocktails[i].ImagePath" class="card-img"  -->
+                        <img src="@Model.Cocktails[i].ImagePath" class="card-img"
+                                style="
+                                    height:50%;  
+                                    width:50%; 
+                                    object-fit:contain;
+                                    <!-- min-width: 18rem; -->
+                                    max-width:50%;
+                                " 
+                                alt="Cocktail Image">
                      @* <img src="@Model.Cocktails[i].ImagePath" class="card-img"  height= "25%"  width= "25%" object-fit= "contain"alt="Cocktail Image">                           *@
                 @* </picture> *@
                 @* width ="294" height="294" *@
