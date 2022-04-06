@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Cocktail page";
 }
 
 <div class="text-center">
@@ -9,36 +9,19 @@
     <p><a href="https://recoverycentersofamerica.com/"> Concerned about a drinking problem</a>?</p>
 </div>
 
-@{ var ColumnCount = 5;
-
+@{ var ColumnCount3 = 3;
 <!-- TODO needed--  to have column count same on eery row -->
 <div class="row">
     @for (int i = 0; i < Model.Cocktails.Count; i++)
     {
-        if (i > 0 && i % ColumnCount == 0)
+        if (i > 0 && i % ColumnCount3 == 0)
         {
             @* close and start new row *@
             @:</div><div class="row"> 
         }
-        <div class="col">            
-            <div class="card" >            
-                @* <div class="card-img" style="background-image: url('@Model.Cocktails[i].ImagePath');"> </div>*@               
-                @* <picture width ="50%" height="50%" > *@
-                @* <picture > *@
-                    @* <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                           *@
-                    <!-- <img src="@Model.Cocktails[i].ImagePath" class="card-img"  -->
-                        <img src="@Model.Cocktails[i].ImagePath" class="card-img"
-                                style="
-                                    height:50%;  
-                                    width:50%; 
-                                    object-fit:contain;
-                                    <!-- min-width: 18rem; -->
-                                    max-width:50%;
-                                " 
-                                alt="Cocktail Image">
-                     @* <img src="@Model.Cocktails[i].ImagePath" class="card-img"  height= "25%"  width= "25%" object-fit= "contain"alt="Cocktail Image">                           *@
-                @* </picture> *@
-                @* width ="294" height="294" *@
+        <div class="col" style="min-width: 18rem; max-width:30%; max-height:50%">            
+            <div class="card" > 
+                <img src="@Model.Cocktails[i].ImagePath" class="card-img" style="object-fit:contain;" alt="Cocktail Image">                     
                 <div class="card-body">
                     <h5 class="card-title"> @Model.Cocktails[i].Name</h5>
                 </div>
@@ -47,9 +30,6 @@
     }
 </div>
 }
-
-
-
 
 
 
