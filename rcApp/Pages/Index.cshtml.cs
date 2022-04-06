@@ -55,6 +55,7 @@ public class IndexModel : PageModel
         Cocktails.Add(new Cocktail() { Id = 1004, Name = "Beer", Price = 15.25M, ImagePath = "images/reme.jpg" });
         Cocktails.Add(new Cocktail() { Id = 1005, Name = "Hand Craft", Price = 15.25M, ImagePath = "images/coffee.jpg" });
         Cocktails.Add(new Cocktail() { Id = 1006, Name = "Pink shirt", Price = 15.25M, ImagePath = "images/tanq.jpg" });
+        Cocktails.Add(new Cocktail() { Id = 1004, Name = "Beer", Price = 15.25M, ImagePath = "images/reme.jpg" });
         
         // 
 
