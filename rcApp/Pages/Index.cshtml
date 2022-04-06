@@ -9,27 +9,28 @@
     <p><a href="https://recoverycentersofamerica.com/"> Concerned about a drinking problem</a>?</p>
 </div>
 
-@{ var ColumnCount3 = 3;
-<!-- TODO needed--  to have column count same on eery row -->
-<div class="row">
-    @for (int i = 0; i < Model.Cocktails.Count; i++)
-    {
-        if (i > 0 && i % ColumnCount3 == 0)
-        {
-            @* close and start new row *@
-            @:</div><div class="row"> 
+<div class="container">
+    <div class="row g-4">
+        @foreach (var item in Model.Cocktails)
+        {   <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="@item.ImagePath" alt="@item.Name" class="card-img-top">
+                    <div class="card-body">
+                        <h3>@item.Name</h3>
+                        <h5>@item.Price</h5>
+                        <p>@item.Desc
+                    </div>
+                    <div class="card-footer text-center">                
+                        <a asp-page="/EditCocktail" asp-route-ID="@item.Id" class="btn btn-primary m-1">Edit</a>
+                        <a asp-page="/DeleteCocktail" asp-route-ID="@item.Id"  class="btn btn-danger m-1">Delete</a>
+                    </div>
+                </div>            
+            </div>        
         }
-        <div class="col" style="min-width: 18rem; max-width:30%; max-height:50%">            
-            <div class="card" > 
-                <img src="@Model.Cocktails[i].ImagePath" class="card-img" style="object-fit:contain;" alt="Cocktail Image">                     
-                <div class="card-body">
-                    <h5 class="card-title"> @Model.Cocktails[i].Name</h5>
-                </div>
-            </div>             
-        </div>
-    }
+    </div>
 </div>
-}
+
+
 
 
 

@@ -29,11 +29,7 @@ th, td {
                 <img src="images/pvw.jpg" alt="Pappy" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Pappy Van Winkle</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, a dicta explicabo temporibus nobis assumenda obcaecati alias. Officia provident numquam asperiores aliquam repudiandae, quasi inventore repellendus error nostrum nobis animi. </p>
                 </div>
             </div>            
         </div>
@@ -42,11 +38,7 @@ th, td {
                 <img src="images/ae.jpg" alt="Angel" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Angel Envy</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vel ad at, neque non necessitatibus! </p>
                 </div>
             </div>            
         </div>
@@ -55,11 +47,7 @@ th, td {
                 <img src="images/reme.jpg" alt="Remy" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Remy Martin</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad ipsa fuga numquam aliquam omnis est asperiores similique dolores? Aspernatur.</p>
                 </div>
             </div>         
         </div>
@@ -71,7 +59,7 @@ th, td {
 <br><br><br><br>
 
 <div class="container">
-    <div class="row">
+    <div class="row g-4">
         @foreach (var item in Model.Cocktails)
         {   <div class="col-12 col-md-6 col-lg-4">
                 <div class="card">
@@ -81,9 +69,12 @@ th, td {
                         <h5>@item.Price</h5>
                         <p>@item.Desc
                     </div>
+                    <div class="card-footer text-center">                
+                        <a asp-page="/EditCocktail" asp-route-ID="@item.Id" class="btn btn-primary m-1">Edit</a>
+                        <a asp-page="/DeleteCocktail" asp-route-ID="@item.Id"  class="btn btn-danger m-1">Delete</a>
+                    </div>
                 </div>            
-            </div>
-        
+            </div>        
         }
     </div>
 </div>
