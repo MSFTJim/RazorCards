@@ -1,0 +1,116 @@
+﻿@page
+@model TimPiss
+@{
+    ViewData["Title"] = "Cocktail page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cocktail Postings</h1>
+    <p><a href="https://recoverycentersofamerica.com/"> Concerned about a drinking problem</a>?</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 25px;
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="images/pvw.jpg" alt="Pappy" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Pappy Van Winkle</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
+            </div>            
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="images/ae.jpg" alt="Angel" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Angel Envy</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
+            </div>            
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+             <div class="card">
+                <img src="images/reme.jpg" alt="Remy" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Remy Martin</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
+            </div>         
+        </div>
+        
+    </div>
+
+</div>
+
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model.Cocktails)
+        {   <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="@item.ImagePath" alt="@item.Name" class="card-img-top">
+                    <div class="card-body">
+                        <h3>@item.Name</h3>
+                        <h5>@item.Price</h5>
+                        <p>@item.Desc
+                    </div>
+                </div>            
+            </div>
+        
+        }
+    </div>
+</div>
+
+<br><br><br><br>
+
+<h3>Last</h3>
+
+
+<div class="card-group">
+    @foreach (var item in Model.Cocktails)
+    {        
+        <div class="card m-3" >
+            <div class="card-header">
+                <img src="@item.ImagePath" class="card-img" style="object-fit:contain;" alt="Cocktail Image">                     
+            </div>    
+
+            <div class="card-body">
+                <h3>@item.Name</h3>
+                <p>Price: @item.Price
+            </div>    
+
+            <div class="card-footer text-center">
+                @* <a href="#" class="btn btn-primary m-1">View</a> *@
+                <a asp-page="/EditCocktail" asp-route-ID="@item.Id" class="btn btn-primary m-1">Edit</a>
+                <a asp-page="/DeleteCocktail" asp-route-ID="@item.Id"  class="btn btn-danger m-1">Delete</a>
+            </div>
+        </div>
+    }
+</div>
