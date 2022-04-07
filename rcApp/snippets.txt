@@ -1,0 +1,136 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 25px;
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="images/pvw.jpg" alt="Pappy" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Pappy Van Winkle</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere doloribus ipsum dolore commodi? Eligendi optio autem fugit quam quis!</p>
+                </div>
+            </div>            
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="images/ae.jpg" alt="Angel" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Angel Envy</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vel ad at, neque non necessitatibus! </p>
+                </div>
+            </div>            
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+             <div class="card">
+                <img src="images/reme.jpg" alt="Remy" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Remy Martin</h5>
+                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad ipsa fuga numquam aliquam omnis est asperiores similique dolores? Aspernatur.</p>
+                </div>
+            </div>         
+        </div>        
+    </div>
+
+</div>
+
+
+@* <div class="card-columns">
+    @foreach (var cocktail in Model.Cocktails)
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@cocktail.ImagePath');">                 
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"> @cocktail.Name</h5>
+            </div>
+        </div>
+    }
+</div> *@
+@* initial code for table layout - saving as example *@
+@* @{ var ColumnCount2 = 4;
+
+<div class="row">
+    @for (int i = 0; i < Model.Cocktails.Count; i++)
+    {
+        if (i > 0 && i % ColumnCount2 == 0)
+        {
+            close and start new row
+            @:</div><div class="row"> 
+        }
+        <div class="col">            
+            <div class="card" >            
+                <div class="card-img" style="background-image: url('@Model.Cocktails[i].ImagePath');"> </div>                
+                <picture width ="50%" height="50%" >
+                 <picture >
+                    <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                          
+                    <img src="@Model.Cocktails[i].ImagePath" class="card-img" style="height:75%;  width:75%; object-fit:contain;" alt="Cocktail Image">
+                     <img src="@Model.Cocktails[i].ImagePath" class="card-img"  height= "25%"  width= "25%" object-fit= "contain"alt="Cocktail Image">                          
+                </picture>
+                width ="294" height="294"
+                <div class="card-body">
+                    <h5 class="card-title"> @Model.Cocktails[i].Name</h5>
+                </div>
+            </div>             
+        </div>
+    }
+</div>
+} *@
+
+   var options = new JsonSerializerOptions { WriteIndented = true, };
+        string jsonString = JsonSerializer.Serialize(Cocktails, options);
+        // Console.WriteLine(jsonString);
+        string fileName = "cocktaildata2.json"; 
+            
+        System.IO.File.WriteAllText(fileName, jsonString);
+
+            Cocktails.Add(new Cocktail() { Id = 1001, Name = "Angel Envy", Price = 15.25M, Rating = 4M, ImagePath = "images/ae.jpg" , 
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1002, Name = "Pappy Van winkle", Price = 15.25M, Rating = 4M, ImagePath = "images/pvw.jpg",
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1003, Name = "Gas Flags", Price = 15.25M, Rating = 4M, ImagePath = "images/gasFlags.jpg",
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1004, Name = "Remy Martin", Price = 15.25M, Rating = 4M, ImagePath = "images/reme.jpg" ,
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1005, Name = "Coffee", Price = 15.25M, Rating = 4M, ImagePath = "images/coffee.jpg",
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1006, Name = "Tanqueray", Price = 15.25M, Rating = 4M, ImagePath = "images/tanq.jpg",
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        Cocktails.Add(new Cocktail() { Id = 1007, Name = "Beer", Price = 15.25M, Rating = 4M, ImagePath = "images/reme.jpg",
+                                        Desc = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."});        
+        
+        // 

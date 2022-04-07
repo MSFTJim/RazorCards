@@ -18,6 +18,7 @@
                     <div class="card-body">
                         <h3>@item.Name</h3>
                         <h5>@item.Price</h5>
+                        <h5>@item.Rating</h5>
                         <p>@item.Desc
                     </div>
                     <div class="card-footer text-center">                
@@ -33,45 +34,3 @@
 
 
 
-
-@* <div class="card-columns">
-    @foreach (var cocktail in Model.Cocktails)
-    {
-        <div class="card">
-            <div class="card-img" style="background-image: url('@cocktail.ImagePath');">                 
-            </div>
-            <div class="card-body">
-                <h5 class="card-title"> @cocktail.Name</h5>
-            </div>
-        </div>
-    }
-</div> *@
-@* initial code for table layout - saving as example *@
-@* @{ var ColumnCount2 = 4;
-
-<div class="row">
-    @for (int i = 0; i < Model.Cocktails.Count; i++)
-    {
-        if (i > 0 && i % ColumnCount2 == 0)
-        {
-            close and start new row
-            @:</div><div class="row"> 
-        }
-        <div class="col">            
-            <div class="card" >            
-                <div class="card-img" style="background-image: url('@Model.Cocktails[i].ImagePath');"> </div>                
-                <picture width ="50%" height="50%" >
-                 <picture >
-                    <img src="@Model.Cocktails[i].ImagePath" class="img-fluid"  alt="Cocktail Image">                          
-                    <img src="@Model.Cocktails[i].ImagePath" class="card-img" style="height:75%;  width:75%; object-fit:contain;" alt="Cocktail Image">
-                     <img src="@Model.Cocktails[i].ImagePath" class="card-img"  height= "25%"  width= "25%" object-fit= "contain"alt="Cocktail Image">                          
-                </picture>
-                width ="294" height="294"
-                <div class="card-body">
-                    <h5 class="card-title"> @Model.Cocktails[i].Name</h5>
-                </div>
-            </div>             
-        </div>
-    }
-</div>
-} *@
