@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Components.Web
 @using rcApp.Models;
 @using rcApp.Services;
 @inject JsonFileCocktailsService cocktailService;
@@ -17,7 +18,7 @@
                     <div class="card-footer text-center">     
                         <small class="text-muted">
                             <button @onclick="(e => SelectCocktail(item.Id))"
-                                data-toggle="modal" data-target="#cocktailModal" class="btn-primary"
+                                data-bs-toggle="modal" data-bs-target="#cocktailModal" class="btn-primary"
                                 >More Info</button>                       
                         </small> 
                     </div>
@@ -27,14 +28,42 @@
     </div>
 </div>
 
+@if(selectedCocktail != null)
+{
+  <div class="modal fade" id="cocktailModal" tabindex="-1" role="dialog" aria-labelledby="cocktailName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cocktailName">@selectedCocktail.Name</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-img" style="background-image: url('@selectedCocktail.ImagePath');">
+            </div>
+            <div class="card-body">
+                <p class="card-text">@selectedCocktail.Desc</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+
 @code {
-    Cocktail selectCocktail;
-    int selectCocktailId;
+    Cocktail selectedCocktail;
+    int selectedCocktailId;
 
     void SelectCocktail(int cocktailId)
     {
-        selectCocktailId = cocktailId;
-        selectCocktail = cocktailService.GetCocktails().First(x => x.Id == cocktailId);
+        selectedCocktailId = cocktailId;
+        selectedCocktail = cocktailService.GetCocktails().First(x => x.Id == cocktailId);
 
 
     }
