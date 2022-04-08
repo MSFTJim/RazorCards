@@ -1,0 +1,42 @@
+@using rcApp.Models;
+@using rcApp.Services;
+@inject JsonFileCocktailsService cocktailService;
+
+<div class="container">
+    <div class="row g-2">
+        @foreach (var item in cocktailService.GetCocktails())
+        {   <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="@item.ImagePath" alt="@item.Name" class="card-img-top">
+                    <div class="card-body">
+                        <h3>@item.Name</h3>
+                        <h5>@item.Price</h5>
+                        <h5>@item.Rating</h5>
+                        <p>@item.Desc </p>
+                    </div>
+                    <div class="card-footer text-center">     
+                        <small class="text-muted">
+                            <button @onclick="(e => SelectCocktail(item.Id))"
+                                data-toggle="modal" data-target="#cocktailModal" class="btn-primary"
+                                >More Info</button>                       
+                        </small> 
+                    </div>
+                </div>            
+            </div>        
+        }
+    </div>
+</div>
+
+@code {
+    Cocktail selectCocktail;
+    int selectCocktailId;
+
+    void SelectCocktail(int cocktailId)
+    {
+        selectCocktailId = cocktailId;
+        selectCocktail = cocktailService.GetCocktails().First(x => x.Id == cocktailId);
+
+
+    }
+
+}
